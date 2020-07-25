@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ddeaf6"
     tools:context=".MainActivity">
 
 
@@ -27,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.30" />
+        app:layout_constraintGuide_percent="0.40" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -35,83 +36,141 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".5"/>
+        app:layout_constraintGuide_percent="0.6" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/horizontal3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".7"/>
+        app:layout_constraintGuide_percent=".8"/>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+<!--Logo-->
     <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal4"
+        app:layout_constraintEnd_toEndOf="@id/vertical2"
+        app:layout_constraintStart_toStartOf="@id/vertical1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--refresh-->
+    <ImageView
+        android:id="@+id/refresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_refreshh"
         android:layout_marginBottom="20dp"
+        android:clickable="true"
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-<!--    left side-->
+    <!--left side-->
     <ImageView
-        android:id="@+id/rock1"
+        android:id="@+id/rockPemain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_rock"
-        app:layout_constraintBottom_toTopOf="@id/horizontal1"
-        app:layout_constraintEnd_toStartOf="@id/vertical1"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/horizontal4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/vertical1"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal1" />
+
 
     <ImageView
-        android:id="@+id/paper1"
+        android:id="@+id/paperPemain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_papper"
-        app:layout_constraintBottom_toTopOf="@id/horizontal2"
-        app:layout_constraintEnd_toStartOf="@id/vertical1"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@id/horizontal2"
+        app:layout_constraintEnd_toEndOf="@id/vertical1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/horizontal1" />
+
 
     <ImageView
-        android:id="@+id/scissor1"
+        android:id="@+id/scissorsPemain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_scissors"
-        app:layout_constraintBottom_toTopOf="@id/horizontal3"
-        app:layout_constraintEnd_toStartOf="@id/vertical1"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@id/horizontal3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/vertical1"
+        app:layout_constraintTop_toTopOf="@id/horizontal2" />
 
-<!--    right side-->
+    <!--right side-->
     <ImageView
-        android:id="@+id/rock2"
+        android:id="@+id/rockKomputer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_rock"
+        app:layout_constraintTop_toTopOf="@id/horizontal4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/horizontal1"
-        app:layout_constraintStart_toEndOf="@id/vertical2"/>
+        app:layout_constraintStart_toStartOf="@id/vertical2"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal1"/>
 
     <ImageView
-        android:id="@+id/paper2"
+        android:id="@+id/paperKomputer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_papper"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/horizontal2"
+        app:layout_constraintTop_toTopOf="@id/horizontal1"
         app:layout_constraintStart_toEndOf="@id/vertical2"/>
 
     <ImageView
-        android:id="@+id/scissor2"
+        android:id="@+id/scissorKomputer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_scissors"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/horizontal2"
         app:layout_constraintBottom_toTopOf="@id/horizontal3"
         app:layout_constraintStart_toEndOf="@id/vertical2"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pemain 1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#00b0f0"
+        android:fontFamily="@font/comic"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/vertical1"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COM"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/comic"
+        android:textColor="#00b0f0"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal4"
+        app:layout_constraintStart_toStartOf="@id/vertical2"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-
-
+<!--versus-->
+    <ImageView
+        android:id="@+id/ivVersus"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_versus"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal2"
+        app:layout_constraintEnd_toEndOf="@id/vertical2"
+        app:layout_constraintStart_toStartOf="@id/vertical1"
+        app:layout_constraintTop_toTopOf="@id/horizontal1"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
