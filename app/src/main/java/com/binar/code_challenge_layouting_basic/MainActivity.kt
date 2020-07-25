@@ -11,6 +11,7 @@ import kotlin.random.Random
 class MainActivity : AppCompatActivity() {
 
     private var pilihanPemain : String =""
+    private var pilihanKomputer : String =""
     private var storeKomputer = arrayListOf<String>("rock","paper","scissor")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,8 +19,24 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         this.supportActionBar?.hide()
 
-
         val binding = ActivityMainBinding.inflate(layoutInflater)
+
+        // refresh
+        binding.refresh.setOnClickListener {
+            binding.paperPemain.setClickable(true)
+            binding.rockPemain.setClickable(true)
+            binding.scissorsPemain.setClickable(true)
+
+            binding.paperPemain.setBackgroundResource(0)
+            binding.rockPemain.setBackgroundResource(0)
+            binding.scissorsPemain.setBackgroundResource(0)
+
+            binding.paperKomputer.setBackgroundResource(0)
+            binding.rockKomputer.setBackgroundResource(0)
+            binding.scissorKomputer.setBackgroundResource(0)
+
+            binding.ivVersus.setImageResource(R.drawable.ic_versus)
+        }
 
         // player choose rock
         binding.rockPemain.setOnClickListener {
@@ -27,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             pilihanPemain = "rock"
             Log.d("pilihan pemain adalah ", "batu")
 
-            var pilihanKomputer = storeKomputer.random()
+            pilihanKomputer = storeKomputer.random()
 
             binding.paperPemain.setClickable(false)
             binding.scissorsPemain.setClickable(false)
@@ -60,7 +77,7 @@ class MainActivity : AppCompatActivity() {
                 pilihanPemain = "paper"
                 Log.d("pilihan pemain adalah ","kertas" )
 
-                var pilihanKomputer = storeKomputer.random()
+                pilihanKomputer = storeKomputer.random()
 
                 binding.paperPemain.setClickable(false)
                 binding.rockPemain.setClickable(false)
@@ -93,7 +110,7 @@ class MainActivity : AppCompatActivity() {
                 pilihanPemain = "scissor"
                 Log.d("pilihan pemain adalah ","gunting")
 
-                var pilihanKomputer = storeKomputer.random()
+                pilihanKomputer = storeKomputer.random()
                 binding.scissorsPemain.setClickable(false)
                 binding.rockPemain.setClickable(false)
                 binding.paperPemain.setClickable(false)
@@ -118,25 +135,6 @@ class MainActivity : AppCompatActivity() {
                     }
 
                 }
-            }
-
-
-
-
-            // refresh
-            binding.refresh.setOnClickListener {
-                binding.paperPemain.setClickable(true)
-                binding.rockPemain.setClickable(true)
-                binding.scissorsPemain.setClickable(true)
-
-                binding.paperPemain.setBackgroundResource(0)
-                binding.rockPemain.setBackgroundResource(0)
-                binding.scissorsPemain.setBackgroundResource(0)
-                binding.paperKomputer.setBackgroundResource(0)
-                binding.rockKomputer.setBackgroundResource(0)
-                binding.scissorKomputer.setBackgroundResource(0)
-
-                binding.ivVersus.setImageResource(R.drawable.ic_versus)
             }
 
         setContentView(binding.root)
