@@ -138,7 +138,7 @@ class MainActivity : AppCompatActivity() {
 
                 binding.ivVersus.setImageResource(R.drawable.ic_versus)
             }
-        
+
         setContentView(binding.root)
     }
 }
